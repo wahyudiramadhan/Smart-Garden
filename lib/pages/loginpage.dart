@@ -1,16 +1,14 @@
-import 'dart:async';
-import 'dart:ui';
+// ignore_for_file: implementation_imports
 
 import 'package:flash/src/flash_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'package:seledriaarduino/models/models.dart';
-import 'package:seledriaarduino/pages/mainpage.dart';
 import 'package:seledriaarduino/pages/registerpage.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -25,8 +23,9 @@ class _LoginPageState extends State<LoginPage> {
 
     return Scaffold(
       body: Container(
+        // ignore: prefer_const_constructors
         decoration: BoxDecoration(
-          image: DecorationImage(
+          image: const DecorationImage(
             image: AssetImage("assets/images/bg-droid-1.png"),
             fit: BoxFit.cover,
           ),
@@ -37,10 +36,10 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  margin: new EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     color: Colors.white.withOpacity(0.5),
-                    borderRadius: BorderRadius.all(
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(20),
                     ),
                   ),
@@ -50,8 +49,9 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
+                          // ignore: prefer_const_literals_to_create_immutables
                           children: [
-                            Text(
+                            const Text(
                               "Masuk",
                               style: TextStyle(
                                 fontSize: 23,
@@ -61,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                             )
                           ],
                         ),
-                        SizedBox(height: 40),
+                        const SizedBox(height: 40),
                         TextFormField(
                           controller: userController,
                           decoration: const InputDecoration(
@@ -92,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                                       userController.text, passController.text);
                                 }
                               },
-                              child: Text("Masuk"),
+                              child: const Text("Masuk"),
                             ),
                           ],
                         ),
@@ -102,9 +102,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 OutlinedButton(
                   onPressed: () {
-                    Get.to(() => RegisterPage());
+                    Get.to(() => const RegisterPage());
                   },
-                  child: Text("Belum Punya Akun? Daftar"),
+                  child: const Text("Belum Punya Akun? Daftar"),
                 )
               ],
             ),

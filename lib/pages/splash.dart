@@ -3,21 +3,28 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:seledriaarduino/pages/loginpage.dart';
-import 'package:seledriaarduino/pages/mainpage.dart';
+import 'package:seledriaarduino/pages/homepage.dart';
+import 'package:seledriaarduino/pages/tabs_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 String? finalnama;
 
 class SplashPage extends StatefulWidget {
+  const SplashPage({Key? key}) : super(key: key);
+
   @override
   State<SplashPage> createState() => _SplashPageState();
 }
 
 class _SplashPageState extends State<SplashPage> {
+  @override
   void initState() {
+    super.initState();
     getValidation().whenComplete(() {
-      Timer(Duration(seconds: 2),
-          () => Get.offAll(() => finalnama == null ? LoginPage() : MainPage()));
+      Timer(
+          const Duration(seconds: 2),
+          () => Get.offAll(
+              () => finalnama == null ? const LoginPage() : tabsPage()));
     });
   }
 
@@ -34,7 +41,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/bg_splash.png"),
             fit: BoxFit.cover,

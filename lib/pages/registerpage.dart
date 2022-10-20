@@ -1,14 +1,13 @@
-import 'dart:ui';
+// ignore_for_file: implementation_imports
 
 import 'package:flash/src/flash_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'package:seledriaarduino/models/models.dart';
-import 'package:seledriaarduino/pages/loginpage.dart';
-import 'package:seledriaarduino/pages/mainpage.dart';
 
 class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
+
   @override
   State<RegisterPage> createState() => _RegisterPageState();
 }
@@ -22,8 +21,9 @@ class _RegisterPageState extends State<RegisterPage> {
     var passController = TextEditingController();
     return Scaffold(
       body: Container(
+        // ignore: prefer_const_constructors
         decoration: BoxDecoration(
-          image: DecorationImage(
+          image: const DecorationImage(
             image: AssetImage("assets/images/bg-droid-1.png"),
             fit: BoxFit.cover,
           ),
@@ -34,10 +34,10 @@ class _RegisterPageState extends State<RegisterPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  margin: new EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     color: Colors.white.withOpacity(0.5),
-                    borderRadius: BorderRadius.all(
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(20),
                     ),
                   ),
@@ -47,8 +47,9 @@ class _RegisterPageState extends State<RegisterPage> {
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
+                          // ignore: prefer_const_literals_to_create_immutables
                           children: [
-                            Text(
+                            const Text(
                               "Daftar",
                               style: TextStyle(
                                 fontSize: 23,
@@ -58,7 +59,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             )
                           ],
                         ),
-                        SizedBox(height: 40),
+                        const SizedBox(height: 40),
                         TextFormField(
                           controller: userController,
                           decoration: const InputDecoration(
@@ -81,7 +82,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             labelText: 'Password',
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
@@ -97,7 +98,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                           namaController.text,
                                           passController.text)
                                       .then((value) {
-                                    if (this.mounted) {
+                                    if (mounted) {
                                       setState(() {
                                         dataResponse = value;
                                       });
@@ -112,7 +113,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   });
                                 }
                               },
-                              child: Text("Daftar"),
+                              child: const Text("Daftar"),
                             ),
                           ],
                         ),
@@ -127,7 +128,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     //   Get.back();
                     // });
                   },
-                  child: Text("Sudah Punya Akun? Masuk"),
+                  child: const Text("Sudah Punya Akun? Masuk"),
                 )
               ],
             ),

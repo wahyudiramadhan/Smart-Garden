@@ -3,9 +3,10 @@ import 'package:seledriaarduino/models/models.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:seledriaarduino/pages/splash.dart';
 
 class ReportPage extends StatefulWidget {
+  const ReportPage({Key? key}) : super(key: key);
+
   @override
   State<ReportPage> createState() => _ReportPageState();
 }
@@ -18,7 +19,7 @@ class _ReportPageState extends State<ReportPage> {
     Uri url = Uri.parse(server + "/report.php");
     http.Response response = await http.get(url);
     data = json.decode(response.body);
-    if (this.mounted) {
+    if (mounted) {
       setState(() {
         setState(() {
           userdata = data["data"];
@@ -36,17 +37,16 @@ class _ReportPageState extends State<ReportPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.teal,
-        title: Text("Laporan"),
-      ),
       body: ListView.builder(
+        // ignore: unnecessary_null_comparison
         itemCount: userdata == null ? 0 : userdata.length,
         itemBuilder: (BuildContext context, int index) {
           return Card(
             child: ListTile(
-              leading: Icon(Icons.task),
-              title: Text("${userdata[index]["kondisi"] == "1" ? "Atap Di Naikan" : "Atap di turunkan"}"),
+              leading: Image.asset('assets/icons/icon5.png'),
+              title: Text(userdata[index]["kondisi"] == "1"
+                  ? "Atap Di Naikan"
+                  : "Atap di turunkan"),
               subtitle: Text("${userdata[index]["waktu"]}"),
             ),
           );
