@@ -16,4 +16,5 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
-![alt text](https://github.com/wahyudiramadhan/Smart-Garden/blob/main/Screenshot_1666295509.png= 250x)
+![alt text](https://github.com/wahyudiramadhan/Smart-Garden/blob/main/Screenshot_1666295509.png)
+<img src="https://github.com/wahyudiramadhan/Smart-Garden/blob/main/Screenshot_1666295509.png" width="48">
