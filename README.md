@@ -18,3 +18,5 @@ samples, guidance on mobile development, and a full API reference.
 
 
 <img src="https://github.com/wahyudiramadhan/Smart-Garden/blob/main/Screenshot_1666295509.png" width="150">
+<img src="https://github.com/wahyudiramadhan/Smart-Garden/blob/main/Screenshot_1666295513.png" width="150">
+
